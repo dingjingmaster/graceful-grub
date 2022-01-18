@@ -12,7 +12,7 @@ set (CMAKE_PROJECT_VERSION_PATCH 0)
 set (CMAKE_PROJECT_VERSION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}")
 
 set (TARGET_NAME "graceful-grub")
-set (LIB_CORE_NAME "libgraceful-grub" CACHE STRING "libgraceful-grub")
+set (LIB_CORE_NAME "graceful-grub" CACHE STRING "graceful-grub")
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 

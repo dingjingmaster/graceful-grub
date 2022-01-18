@@ -91,4 +91,8 @@ int main (int argc, char* argv[])
     int                         isPrep = 0;
     const char                 *pkgdatadir;
 
+    grub_util_host_init (&argc, &argv);
+    productVersion = xstrdup (PACKAGE_VERSION);
+    pkgdatadir = grub_util_get_pkgdatadir ();
+    labelFont = grub_util_path_concat (2, pkgdatadir, "unicode.pf2");
 }

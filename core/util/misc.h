@@ -7,10 +7,10 @@
 #include <setjmp.h>
 #include <unistd.h>
 
-#include "config.h
-#include "core/grub-types.h
-#include "core/grub-symbol.h
-#include "core/emu/misc.h“
+#include "config.h"
+#include "core/grub-types.h"
+#include "core/grub-symbol.h"
+#include "core/emu/misc.h"
 
 char *grub_util_get_path (const char *dir, const char *file);
 size_t grub_util_get_image_size (const char *path);
