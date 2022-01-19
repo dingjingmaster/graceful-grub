@@ -3,9 +3,9 @@
 
 #include <sys/types.h>
 
-#include "core/grub-disk.h"
-#include "core/grub-partition.h"
-#include "core/emu/hostfile.h"
+#include "../../core/grub-disk.h"
+#include "../../core/grub-partition.h"
+#include "../../core/emu/hostfile.h"
 
 grub_util_fd_t
 grub_util_fd_open_device (const grub_disk_t disk, grub_disk_addr_t sector, int flags,

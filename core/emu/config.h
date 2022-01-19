@@ -1,9 +1,9 @@
 #ifndef GRUB_CONFIG_EMU_H
 #define GRUB_CONFIG_EMU_H
 
-#include "core/grub-disk.h"
-#include "core/grub-partition.h"
-#include "core/emu/hostfile.h"
+#include "../../core/grub-disk.h"
+#include "../../core/grub-partition.h"
+#include "../../core/emu/hostfile.h"
 #include <stdio.h>
 
 const char *

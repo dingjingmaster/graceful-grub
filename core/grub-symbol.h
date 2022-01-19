@@ -1,7 +1,7 @@
 #ifndef GRUBSYMBOL_H
 #define GRUBSYMBOL_H
 
-#include "config.h"
+#include "../config.h"
 
 /* Apple assembler requires local labels to start with a capital L */
 #define LOCAL(sym)	L_ ## sym

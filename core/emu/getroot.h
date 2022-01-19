@@ -1,8 +1,8 @@
 #ifndef GRUB_UTIL_GETROOT_H
 #define GRUB_UTIL_GETROOT_H
 
-#include "core/grub-types.h"
-#include "core/grub-device.h"
+#include "../../core/grub-types.h"
+#include "../../core/grub-device.h"
 
 #include <sys/types.h>
 #include <stdio.h>

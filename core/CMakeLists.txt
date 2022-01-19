@@ -225,6 +225,32 @@ FILE (GLOB CPU_I386_SRC
     )
 source_group (cpu_i386 ${CPU_I386_HDR} ${CPU_I386_SRC})
 
+FILE (GLOB EMU_HDR
+    emu/config.h
+    emu/console.h
+    emu/exec.h
+    emu/getroot.h
+    emu/hostdisk.h
+    emu/hostfile.h
+    emu/misc.h
+    emu/net.h
+    )
+
+FILE (GLOB EMU_SRC
+    emu/argp_common.c
+#    emu/cache.c
+#    emu/full.c
+    emu/hostdisk.c
+    emu/hostfs.c
+#    emu/lite.c
+    emu/main.c
+    emu/misc.c
+    emu/mm.c
+    emu/time.c
+
+    )
+source_group (emu ${EMU_HDR} ${EMU_SRC})
+
 
 set (CORE_SRC
     ${GNULIB_HDR}       ${GNULIB_SRC}
@@ -233,6 +259,7 @@ set (CORE_SRC
     ${KERNEL_SRC}
     ${CPU_HDR}          ${CPU_SRC}
     ${CPU_I386_HDR}     ${CPU_I386_SRC}
+    ${EMU_HDR}          ${EMU_SRC}
     )
 
 

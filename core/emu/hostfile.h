@@ -4,9 +4,9 @@
 
 #include <sys/types.h>
 
-#include "core/grub-disk.h"
-#include "core/grub-partition.h"
-#include "core/osdep/hostfile.h"
+#include "../../core/grub-disk.h"
+#include "../../core/grub-partition.h"
+#include "../../core/osdep/hostfile.h"
 
 int
 grub_util_is_directory (const char *path);
