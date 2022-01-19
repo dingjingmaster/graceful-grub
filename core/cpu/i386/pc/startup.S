@@ -41,11 +41,11 @@
  *       with "ret $N" where N is ((the number of arguments) - 3) * 4.
  */
 
-#include <config.h>
-#include <grub/symbol.h>
-#include <multiboot.h>
+#include "config.h"
+#include "core/grub-symbol.h"
+#include "core/grub-multiboot.h"
 #ifdef __APPLE__
-#include <grub/i386/pc/memory.h>
+#include "core/cpu/i386/pc/memory.h"
 #endif
 
 	.file	"startup.S"

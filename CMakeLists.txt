@@ -23,6 +23,9 @@ add_definitions (
 #    -DGRUB_UTIL=1
     -DGRUB_MACHINE=I386_PC
 #    -DGRUB_MACHINE_PCBIOS=1
+
+# fixme:// dj-
+    -DGRUB_KERNEL_PRELOAD_SPACE_REUSABLE
     )
 
 add_subdirectory (core)

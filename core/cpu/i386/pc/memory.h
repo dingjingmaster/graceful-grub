@@ -1,36 +1,17 @@
-/* memory.h - describe the memory map */
-/*
- *  GRUB  --  GRand Unified Bootloader
- *  Copyright (C) 2002,2007,2008,2009  Free Software Foundation, Inc.
- *
- *  GRUB is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  GRUB is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
- */
+#ifndef GRUB_MEMORY_MACHINE_H
+#define GRUB_MEMORY_MACHINE_H
 
-#ifndef GRUB_MEMORY_MACHINE_HEADER
-#define GRUB_MEMORY_MACHINE_HEADER	1
-
-#include <grub/symbol.h>
+#include "core/grub-symbol.h"
 #ifndef ASM_FILE
-#include <grub/types.h>
-#include <grub/err.h>
-#include <grub/memory.h>
+#include "core/grub-types.h"
+#include "core/grub-err.h"
+#include "core/grub-memory.h"
 #endif
 
-#include <grub/i386/memory.h>
-#include <grub/i386/memory_raw.h>
+#include "core/cpu/i386/memory.h"
+#include "core/cpu/i386/memory_raw.h"
 
-#include <grub/offsets.h>
+#include "core/grub-offsets.h"
 
 /* The area where GRUB is decompressed at early startup.  */
 #define GRUB_MEMORY_MACHINE_DECOMPRESSION_ADDR	0x100000

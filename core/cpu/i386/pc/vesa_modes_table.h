@@ -1,7 +1,7 @@
-#ifndef GRUB_VESA_MODE_TABLE_HEADER
-#define GRUB_VESA_MODE_TABLE_HEADER 1
+#ifndef GRUB_VESA_MODE_TABLE_H
+#define GRUB_VESA_MODE_TABLE_H
 
-#include <grub/types.h>
+#include "core/grub-types.h"
 
 #define GRUB_VESA_MODE_TABLE_START 0x300
 #define GRUB_VESA_MODE_TABLE_END 0x373

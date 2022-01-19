@@ -2,7 +2,7 @@
 #include "core/grub-pci.h"
 #include "core/grub-mm.h"
 #endif
-#include "core/grub-machine/kernel.h"
+#include "core/machine/kernel.h"
 #include "core/grub-misc.h"
 #include "core/grub-vga.h"
 

@@ -1,40 +1,22 @@
-/*
- *  GRUB  --  GRand Unified Bootloader
- *  Copyright (C) 2002,2003,2004,2005,2006,2007,2008,2009,2010  Free Software Foundation, Inc.
- *
- *  GRUB is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  GRUB is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-#include <grub/kernel.h>
-#include <grub/mm.h>
-#include <grub/machine/boot.h>
-#include <grub/i386/floppy.h>
-#include <grub/machine/memory.h>
-#include <grub/machine/console.h>
-#include <grub/machine/kernel.h>
-#include <grub/machine/int.h>
-#include <grub/types.h>
-#include <grub/err.h>
-#include <grub/dl.h>
-#include <grub/misc.h>
-#include <grub/loader.h>
-#include <grub/env.h>
-#include <grub/cache.h>
-#include <grub/time.h>
-#include <grub/cpu/cpuid.h>
-#include <grub/cpu/tsc.h>
-#include <grub/machine/time.h>
+#include "core/grub-kernel.h"
+#include "core/grub-mm.h"
+#include "core/machine/boot.h"
+#include "core/cpu/i386/floppy.h"
+#include "core/machine/memory.h"
+#include "core/machine/console.h"
+#include "core/machine/kernel.h"
+#include "core/machine/int.h"
+#include "core/grub-types.h"
+#include "core/grub-err.h"
+#include "core/grub-dl.h"
+#include "core/grub-misc.h"
+#include "core/grub-loader.h"
+#include "core/grub-env.h"
+#include "core/grub-cache.h"
+#include "core/grub-time.h"
+#include "core/cpu/i386/cpuid.h"
+#include "core/cpu/i386/tsc.h"
+#include "core/machine/time.h"
 
 struct mem_region
 {

@@ -12,9 +12,16 @@
 #include "core/grub-parser.h"
 #include "core/grub-verify.h"
 
+// FIXME://DJ-
+#include "core/grub-types.h"
+#include "core/grub-kernel.h"
+// <<<
+
 #ifdef GRUB_MACHINE_PCBIOS
 #include "core/machine/memory.h"
 #endif
+
+extern grub_addr_t grub_modbase;
 
 grub_addr_t
 grub_modules_get_end (void)

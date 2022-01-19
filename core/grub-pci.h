@@ -2,8 +2,8 @@
 #define	GRUB_PCI_H
 
 #ifndef ASM_FILE
-#include "core/grub-types.h"
-#include "core/grub-symbol.h"
+#include "grub-types.h"
+#include "grub-symbol.h"
 #endif
 
 #define  GRUB_PCI_ADDR_SPACE_MASK	0x01
@@ -85,7 +85,7 @@ enum
 typedef grub_uint32_t grub_pci_id_t;
 
 #ifdef GRUB_MACHINE_EMU
-#include <grub/pciutils.h>
+#include "grub-pciutils.h"
 #else
 typedef grub_uint32_t grub_pci_address_t;
 struct grub_pci_device
@@ -112,7 +112,7 @@ grub_pci_get_function (grub_pci_device_t dev)
 {
   return dev.function;
 }
-#include <grub/cpu/pci.h>
+#include "cpu/pci.h"
 #endif
 
 typedef int (*grub_pci_iteratefunc_t)
@@ -124,7 +124,7 @@ grub_pci_address_t EXPORT_FUNC(grub_pci_make_address) (grub_pci_device_t dev,
 void EXPORT_FUNC(grub_pci_iterate) (grub_pci_iteratefunc_t hook,
 				    void *hook_data);
 
-#include <grub/dma.h>
+#include "grub-dma.h"
 
 grub_uint8_t
 EXPORT_FUNC (grub_pci_find_capability) (grub_pci_device_t dev, grub_uint8_t cap);

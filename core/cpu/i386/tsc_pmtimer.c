@@ -20,13 +20,13 @@
  *  along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <grub/types.h>
-#include <grub/time.h>
-#include <grub/misc.h>
-#include <grub/i386/tsc.h>
-#include <grub/i386/pmtimer.h>
-#include <grub/acpi.h>
-#include <grub/cpu/io.h>
+#include "core/grub-types.h"
+#include "core/grub-time.h"
+#include "core/grub-misc.h"
+#include "core/cpu/i386/tsc.h"
+#include "core/cpu/i386/pmtimer.h"
+#include "core/grub-acpi.h"
+#include "core/cpu/io.h"
 
 grub_uint64_t
 grub_pmtimer_wait_count_tsc (grub_port_t pmtimer,

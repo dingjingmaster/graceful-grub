@@ -58,16 +58,16 @@
   operation.
  */
 
-#include <config.h>
-#include <grub/mm.h>
-#include <grub/misc.h>
-#include <grub/err.h>
-#include <grub/types.h>
-#include <grub/disk.h>
-#include <grub/dl.h>
-#include <grub/i18n.h>
-#include <grub/mm_private.h>
-#include <grub/safemath.h>
+#include "config.h"
+#include "core/grub-mm.h"
+#include "core/grub-misc.h"
+#include "core/grub-err.h"
+#include "core/grub-types.h"
+#include "core/grub-disk.h"
+#include "core/grub-dl.h"
+#include "core/grub-i18n.h"
+#include "core/grub-mm_private.h"
+#include "core/grub-safemath.h"
 
 #ifdef MM_DEBUG
 # undef grub_calloc

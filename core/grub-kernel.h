@@ -1,8 +1,8 @@
 #ifndef GRUB_KERNEL_H
 #define GRUB_KERNEL_H
 
-#include "core/grub-types.h"
-#include "core/grub-symbol.h"
+#include "grub-types.h"
+#include "grub-symbol.h"
 
 enum
 {
@@ -49,7 +49,7 @@ struct grub_module_info64
 };
 
 // FIXME:// DJ-
-#define GRUB_UTIL 1
+//#define GRUB_UTIL 1
 // end
 
 #ifndef GRUB_UTIL

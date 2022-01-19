@@ -1,26 +1,8 @@
-/*
- *  GRUB  --  GRand Unified Bootloader
- *  Copyright (C) 2002,2003,2004,2005,2006,2007,2008,2009  Free Software Foundation, Inc.
- *
- *  GRUB is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  GRUB is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-#include <grub/machine/memory.h>
-#include <grub/types.h>
-#include <grub/multiboot.h>
-#include <grub/err.h>
-#include <grub/misc.h>
+#include "core/machine/memory.h"
+#include "core/grub-types.h"
+#include "core/grub-multiboot.h"
+#include "core/grub-err.h"
+#include "core/grub-misc.h"
 
 /* A pointer to the MBI in its initial location.  */
 struct multiboot_info *startup_multiboot_info;
