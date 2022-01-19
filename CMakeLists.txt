@@ -23,6 +23,8 @@ add_definitions (
 #    -DGRUB_UTIL=1
     -DGRUB_MACHINE=I386_PC
 #    -DGRUB_MACHINE_PCBIOS=1
+    -DGRUB_DIR_NAME=\"grub\"
+    -DGRUB_BOOT_DIR_NAME=\"boot\"
 
 # fixme:// dj-
     -DGRUB_KERNEL_PRELOAD_SPACE_REUSABLE
