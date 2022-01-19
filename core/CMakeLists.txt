@@ -89,8 +89,9 @@ FILE (GLOB KERNEL_SRC
     kernel/rescue_parser.c
     kernel/rescue_reader.c
     kernel/term.c
-    kernel/time.c
+#    kernel/time.c
     kernel/verifiers.c
+    kernel/libgrub.c
 #    kernel/vga_init.c
     )
 source_group (kernel ${KERNEL_SRC})
@@ -155,7 +156,7 @@ FILE (GLOB CPU_SRC
     cpu/rescue_parser.c
     cpu/rescue_reader.c
     cpu/term.c
-    cpu/time.c
+#    cpu/time.c
     cpu/verifiers.c
 #    cpu/vga_init.c
     )
@@ -243,13 +244,43 @@ FILE (GLOB EMU_SRC
     emu/hostdisk.c
     emu/hostfs.c
 #    emu/lite.c
-    emu/main.c
+#    emu/main.c
     emu/misc.c
     emu/mm.c
     emu/time.c
 
     )
 source_group (emu ${EMU_HDR} ${EMU_SRC})
+
+
+FILE (GLOB OSDEP_HDR
+    )
+
+FILE (GLOB OSDEP_SRC
+    osdep/blocklist.c
+    osdep/hostdisk.c
+    osdep/compress.c
+    osdep/init.c
+    osdep/config.c
+    osdep/ofpath.c
+    osdep/cputime.c
+    osdep/password.c
+    osdep/dl.c
+    osdep/platform.c
+    osdep/emuconsole.c
+    osdep/platform_unix.c
+    osdep/emunet.c
+    osdep/random.c
+    osdep/exec.c
+    osdep/relpath.c
+    osdep/getroot.c
+    osdep/sleep.c
+
+    osdep/devmapper/hostdisk.c
+    )
+
+source_group (osdep ${OSDEP_HDR} ${OSDEP_SRC})
+
 
 FILE (GLOB TERM_HDR
     )
@@ -268,6 +299,22 @@ FILE (GLOB TERM_SRC
     )
 source_group (term ${TERM_HDR} ${TERM_SRC})
 
+FILE (GLOB UTIL_HDR
+    util/install.h
+    util/libnvpair.h
+    util/libzfs.h
+    util/misc.h
+    util/mkimage.h
+    util/ofpath.h
+    util/resolve.h
+    util/windows.h
+    )
+
+FILE (GLOB UTIL_SRC
+    util/config.c
+    )
+source_group (util ${UTIL_HDR} ${UTIL_SRC})
+
 set (CORE_SRC
     ${GNULIB_HDR}       ${GNULIB_SRC}
     ${OSDEP_HDR}        ${OSDEP_SRC}            ${OSDEP_UNIX_SRC}
@@ -276,7 +323,9 @@ set (CORE_SRC
     ${CPU_HDR}          ${CPU_SRC}
     ${CPU_I386_HDR}     ${CPU_I386_SRC}
     ${EMU_HDR}          ${EMU_SRC}
+    ${OSDEP_HDR}        ${OSDEP_SRC}
     ${TERM_HDR}         ${TERM_SRC}
+    ${UTIL_HDR}         ${UTIL_SRC}
     )
 
 

@@ -1,16 +1,16 @@
-#include <config-util.h>
+#include "config-util.h"
 
-#include <grub/disk.h>
-#include <grub/partition.h>
-#include <grub/msdos_partition.h>
-#include <grub/types.h>
-#include <grub/err.h>
-#include <grub/emu/misc.h>
-#include <grub/emu/hostdisk.h>
-#include <grub/emu/getroot.h>
-#include <grub/misc.h>
-#include <grub/i18n.h>
-#include <grub/list.h>
+#include "../../grub-disk.h"
+#include "../../grub-partition.h"
+#include "../../grub-msdos_partition.h"
+#include "../../grub-types.h"
+#include "../../grub-err.h"
+#include "../../emu/misc.h"
+#include "../../emu/hostdisk.h"
+#include "../../emu/getroot.h"
+#include "../../grub-misc.h"
+#include "../../grub-i18n.h"
+#include "../../grub-list.h"
 
 #include <stdio.h>
 #include <stdlib.h>
