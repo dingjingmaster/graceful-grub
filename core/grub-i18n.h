@@ -1,7 +1,7 @@
 #ifndef	GRUB_I18N_H
 #define	GRUB_I18N_H
 
-#include "config.h"
+#include "../config.h"
 #include "grub-symbol.h"
 
 /* NLS can be disabled through the configure --disable-nls option.  */

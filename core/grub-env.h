@@ -1,10 +1,10 @@
 #ifndef GRUB_ENV_H
 #define GRUB_ENV_H
 
-#include "core/grub-symbol.h"
-#include "core/grub-err.h"
-#include "core/grub-types.h"
-#include "core/grub-menu.h"
+#include "grub-symbol.h"
+#include "grub-err.h"
+#include "grub-types.h"
+#include "grub-menu.h"
 
 struct grub_env_var;
 

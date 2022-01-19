@@ -2,8 +2,8 @@
 #define GRUB_ACPI_H
 
 #ifndef GRUB_DSDT_TEST
-#include "core/grub-types.h"
-#include "core/grub-err.h"
+#include "grub-types.h"
+#include "grub-err.h"
 #else
 #define GRUB_PACKED __attribute__ ((packed))
 #endif

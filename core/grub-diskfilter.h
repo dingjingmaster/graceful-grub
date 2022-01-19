@@ -1,8 +1,8 @@
 #ifndef GRUB_DISKFILTER_H
 #define GRUB_DISKFILTER_H
 
-#include "core/grub-types.h"
-#include "core/grub-list.h"
+#include "grub-types.h"
+#include "grub-list.h"
 
 enum
   {

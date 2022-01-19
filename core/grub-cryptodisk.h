@@ -1,11 +1,11 @@
 #ifndef GRUB_CRYPTODISK_H
 #define GRUB_CRYPTODISK_H
 
-#include "core/grub-disk.h"
-#include "core/grub-crypto.h"
-#include "core/grub-list.h"
+#include "grub-disk.h"
+#include "grub-crypto.h"
+#include "grub-list.h"
 #ifdef GRUB_UTIL
-#include "core/emu/hostdisk.h"
+#include "emu/hostdisk.h"
 #endif
 
 typedef enum

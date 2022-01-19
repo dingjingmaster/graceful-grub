@@ -1,11 +1,11 @@
 #ifndef GRUB_FILE_H
 #define GRUB_FILE_H
 
-#include "core/grub-types.h"
-#include "core/grub-err.h"
-#include "core/grub-device.h"
-#include "core/grub-fs.h"
-#include "core/grub-disk.h"
+#include "grub-types.h"
+#include "grub-err.h"
+#include "grub-device.h"
+#include "grub-fs.h"
+#include "grub-disk.h"
 
 enum grub_file_type
   {

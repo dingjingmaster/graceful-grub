@@ -4,9 +4,9 @@
 #include <sys/types.h>
 #include <stdio.h>
 
-#include "core/grub-device.h"
-#include "core/grub-disk.h"
-#include "core/emu/hostfile.h"
+#include "../grub-device.h"
+#include "../grub-disk.h"
+#include "../emu/hostfile.h"
 
 #define GRUB_INSTALL_OPTIONS					  \
   { "modules",      GRUB_INSTALL_OPTIONS_MODULES, N_("MODULES"),	  \

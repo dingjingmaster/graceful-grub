@@ -1,7 +1,7 @@
 #ifndef GRUB_DISK_H
 #define GRUB_DISK_H
 
-#include "config.h"
+#include "../config.h"
 
 #include "grub-symbol.h"
 #include "grub-err.h"
@@ -78,6 +78,8 @@ struct grub_disk_dev
   grub_err_t (*disk_write) (struct grub_disk *disk, grub_disk_addr_t sector,
 		       grub_size_t size, const char *buf);
 
+// FIXME:// DJ-
+#define GRUB_UTIL
 #ifdef GRUB_UTIL
   struct grub_disk_memberlist *(*disk_memberlist) (struct grub_disk *disk);
   const char * (*disk_raidname) (struct grub_disk *disk);
@@ -132,6 +134,8 @@ struct grub_disk
 };
 typedef struct grub_disk *grub_disk_t;
 
+// FIXME:// DJ-
+#define GRUB_UTIL
 #ifdef GRUB_UTIL
 struct grub_disk_memberlist
 {

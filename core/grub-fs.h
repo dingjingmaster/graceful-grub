@@ -8,7 +8,7 @@
 
 /* For embedding types.  */
 #ifdef GRUB_UTIL
-#include "core/grub-partition.h"
+#include "grub-partition.h"
 #endif
 
 /* Forward declaration is required, because of mutual reference.  */

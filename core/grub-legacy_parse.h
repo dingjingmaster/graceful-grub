@@ -1,7 +1,7 @@
 #ifndef GRUB_LEGACY_PARSE_H
 #define GRUB_LEGACY_PARSE_H
 
-#include "core/grub-types.h"
+#include "grub-types.h"
 
 char *grub_legacy_parse (const char *buf, char **entryname, char **suffix);
 char *grub_legacy_escape (const char *in, grub_size_t len);

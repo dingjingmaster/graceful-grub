@@ -1,10 +1,10 @@
 #ifndef GRUB_COMMAND_H
 #define GRUB_COMMAND_H
 
-#include "core/grub-symbol.h"
-#include "core/grub-err.h"
-#include "core/grub-list.h"
-#include "core/grub-misc.h"
+#include "grub-symbol.h"
+#include "grub-err.h"
+#include "grub-list.h"
+#include "grub-misc.h"
 
 typedef enum grub_command_flags
   {

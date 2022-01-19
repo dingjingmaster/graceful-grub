@@ -1,11 +1,11 @@
 #ifndef GRUBTYPES_H
 #define GRUBTYPES_H
 
-#include "config.h"
+#include "../config.h"
 #ifndef GRUB_UTIL
 
 // FIXME:// DJ-
-#include "core/cpu/i386/types.h"
+#include "cpu/i386/types.h"
 #endif
 
 #ifdef __MINGW32__
