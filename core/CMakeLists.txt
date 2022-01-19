@@ -251,6 +251,22 @@ FILE (GLOB EMU_SRC
     )
 source_group (emu ${EMU_HDR} ${EMU_SRC})
 
+FILE (GLOB TERM_HDR
+    )
+FILE (GLOB TERM_SRC
+#    term/at_keyboard.c
+#    term/gfxterm_background.c
+#    term/gfxterm.c
+#    term/morse.c
+#    term/ns8250.c
+#    term/ps2.c
+#    term/serial.c
+#    term/spkmodem.c
+    term/terminfo.c
+    term/tparm.c
+#    term/usb_keyboard.c
+    )
+source_group (term ${TERM_HDR} ${TERM_SRC})
 
 set (CORE_SRC
     ${GNULIB_HDR}       ${GNULIB_SRC}
@@ -260,6 +276,7 @@ set (CORE_SRC
     ${CPU_HDR}          ${CPU_SRC}
     ${CPU_I386_HDR}     ${CPU_I386_SRC}
     ${EMU_HDR}          ${EMU_SRC}
+    ${TERM_HDR}         ${TERM_SRC}
     )
 
 

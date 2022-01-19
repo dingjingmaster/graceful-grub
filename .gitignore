@@ -1,6 +1,8 @@
 # Prerequisites
 *.d
 *.txt.user
+.deps-core/
+.dirstamp
 
 # Object files
 *.o
