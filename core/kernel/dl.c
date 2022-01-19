@@ -4,6 +4,8 @@
 #include "grub-elf.h"
 #include "grub-dl.h"
 #include "grub-misc.h"
+#include "core/grub-dl.h"
+
 #include "core/grub-mm.h"
 #include "core/grub-err.h"
 #include "core/grub-types.h"

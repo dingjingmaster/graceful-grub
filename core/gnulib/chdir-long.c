@@ -1,21 +1,3 @@
-/* provide a chdir function that tries not to fail due to ENAMETOOLONG
-   Copyright (C) 2004-2019 Free Software Foundation, Inc.
-
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3 of the License, or
-   (at your option) any later version.
-
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
-
-/* written by Jim Meyering */
-
 #include <config.h>
 
 #include "chdir-long.h"
@@ -87,7 +69,8 @@ cdb_advance_fd (struct cd_buf *cdb, char const *dir)
 }
 
 /* Return a pointer to the first non-slash in S.  */
-static char * _GL_ATTRIBUTE_PURE
+// FIXME:// DJ-
+static char * /*_GL_ATTRIBUTE_PURE*/
 find_non_slash (char const *s)
 {
   size_t n_slash = strspn (s, "/");

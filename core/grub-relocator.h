@@ -4,7 +4,9 @@
 #include "core/grub-types.h"
 #include "core/grub-err.h"
 #include "core/grub-memory.h"
-#include "core/cpu/memory.h"
+
+// FIXME:// DJ-
+#include "core/cpu/i386/memory.h"
 
 struct grub_relocator;
 struct grub_relocator_chunk;

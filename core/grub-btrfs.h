@@ -1,6 +1,8 @@
 #ifndef GRUB_BTRFS_H
 #define GRUB_BTRFS_H
 
+#include "core/grub-types.h"
+
 enum
   {
     GRUB_BTRFS_ITEM_TYPE_INODE_ITEM = 0x01,

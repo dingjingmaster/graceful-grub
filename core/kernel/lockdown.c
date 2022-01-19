@@ -1,7 +1,7 @@
 #include "core/grub-dl.h"
 #include "core/grub-env.h"
 #include "core/grub-file.h"
-#include "core/grub-lockdown.h"
+//#include "core/grub-lockdown.h"
 #include "core/grub-verify.h"
 
 static int lockdown = GRUB_LOCKDOWN_DISABLED;

@@ -1,3 +1,7 @@
+#include "core/grub-err.h"
+#include "core/grub-disk.h"
+#include "core/grub-partition.h"
+
 /* This function performs three tasks:
    - Make sectors disk relative from partition relative.
    - Normalize offset to be less than the sector size.

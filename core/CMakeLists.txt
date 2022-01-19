@@ -74,13 +74,13 @@ FILE (GLOB KERNEL_SRC
     kernel/disk_common.c
     kernel/dl.c
     kernel/elf.c
-    kernel/elfXX.c
+#    kernel/elfXX.c
     kernel/env.c
     kernel/err.c
     kernel/file.c
     kernel/fs.c
     kernel/list.c
-    kernel/lockdown.c
+#    kernel/lockdown.c
     kernel/main.c
     kernel/misc.c
     kernel/mm.c
@@ -93,6 +93,11 @@ FILE (GLOB KERNEL_SRC
     kernel/verifiers.c
     kernel/vga_init.c
     )
+
+FILE (GLOB KERNEL_I386_SRC
+    )
+
+source_group (kernel ${KERNEL_SRC})
 
 
 set (CORE_SRC

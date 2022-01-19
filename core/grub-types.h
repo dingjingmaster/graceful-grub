@@ -3,19 +3,9 @@
 
 #include "config.h"
 #ifndef GRUB_UTIL
-//#include <grub/cpu/types.h>
-// grub/cpu/types.h --->>>>>>>>>>>>>>>>
-/* The size of void *.  */
-#define GRUB_TARGET_SIZEOF_VOID_P	4
 
-/* The size of long.  */
-#define GRUB_TARGET_SIZEOF_LONG		4
-
-/* i386 is little-endian.  */
-#undef GRUB_TARGET_WORDS_BIGENDIAN
-
-#define GRUB_HAVE_UNALIGNED_ACCESS 1
-// <<<<<- grub/cpu/types.h
+// FIXME:// DJ-
+#include "core/cpu/i386/types.h"
 #endif
 
 #ifdef __MINGW32__

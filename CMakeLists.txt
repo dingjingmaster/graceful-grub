@@ -17,7 +17,12 @@ set (LIB_CORE_NAME "graceful-grub" CACHE STRING "graceful-grub")
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
 add_definitions (
+    -DGRUB_TARGET_CPU=\"i386\"
     -DGRUB_FILE=\"TTT\"                             # 此处可能是调试信息输出文件的名字
+    -D_FILE_OFFSET_BITS=64
+#    -DGRUB_UTIL=1
+    -DGRUB_MACHINE=I386_PC
+#    -DGRUB_MACHINE_PCBIOS=1
     )
 
 add_subdirectory (core)
