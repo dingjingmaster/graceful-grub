@@ -54,12 +54,12 @@ int grub_font_get_string_width (grub_font_t font,
 /* Implementation details -- this should not be used outside of the
    view itself.  */
 
-#include <grub/video.h>
-#include <grub/bitmap.h>
-#include <grub/bitmap_scale.h>
-#include <grub/gui.h>
-#include <grub/gfxwidgets.h>
-#include <grub/icon_manager.h>
+#include "grub-video.h"
+#include "grub-bitmap.h"
+#include "grub-bitmap_scale.h"
+#include "grub-gui.h"
+#include "grub-gfxwidgets.h"
+#include "grub-icon_manager.h"
 
 /* Definition of the private representation of the view.  */
 struct grub_gfxmenu_view

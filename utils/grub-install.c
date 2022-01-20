@@ -96,6 +96,10 @@ enum
 
 static int fs_probe = 1;
 
+// FIXME:// DJ-
+extern void grub_host_init (void);
+//
+
 static error_t
 argp_parser (int key, char *arg, struct argp_state *state)
 {
