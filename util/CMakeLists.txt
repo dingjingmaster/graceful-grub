@@ -22,6 +22,7 @@ include (${CMAKE_SOURCE_DIR}/util/grub-probe.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-render-label.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-script-check.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-sparc64-setup.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-syslinux2cfg.cmake)
 
 
 
