@@ -139,36 +139,7 @@ add_definitions (
     -D_FILE_OFFSET_BITS=64
     )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#add_definitions (
-#    -DGRUB_TARGET_CPU=\"i386\"
-#    -DGRUB_FILE=\"TTT\"                             # 此处可能是调试信息输出文件的名字
-#    -D_FILE_OFFSET_BITS=64
-##    -DGRUB_UTIL=1
-#    -DGRUB_MACHINE=I386_PC
-##    -DGRUB_MACHINE_PCBIOS=1
-#    -DGRUB_DIR_NAME=\"grub\"
-#    -DGRUB_BOOT_DIR_NAME=\"boot\"
-
-## fixme:// dj-
-#    -DGRUB_KERNEL_PRELOAD_SPACE_REUSABLE
-#    )
-
+add_subdirectory (grub-core)
 add_subdirectory (tests)
 add_subdirectory (util)
-#add_subdirectory (core)
-#add_subdirectory (utils)
 
