@@ -4,6 +4,7 @@
 .deps*
 *.gmo
 .dirstamp
+ChangeLog
 
 # Object files
 *.o
