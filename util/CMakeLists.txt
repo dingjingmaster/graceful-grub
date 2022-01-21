@@ -6,5 +6,7 @@ include (${CMAKE_SOURCE_DIR}/util/grub-file.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-fstest.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-glue-efi.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-install.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-macbless.cmake)
+
 
 
