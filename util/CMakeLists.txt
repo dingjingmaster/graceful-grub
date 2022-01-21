@@ -18,6 +18,7 @@ include (${CMAKE_SOURCE_DIR}/util/grub-mkrescue.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mkstandalone.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mount.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-ofpathname.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-probe.cmake)
 
 
 
