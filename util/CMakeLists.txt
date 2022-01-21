@@ -12,6 +12,7 @@ include (${CMAKE_SOURCE_DIR}/util/grub-mkfont.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mkimage.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mklayout.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mknetdir.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-mkpasswd-pbkdf2.cmake)
 
 
 
