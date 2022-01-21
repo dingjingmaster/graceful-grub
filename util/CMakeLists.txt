@@ -8,6 +8,7 @@ include (${CMAKE_SOURCE_DIR}/util/grub-glue-efi.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-install.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-macbless.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-menulst2cfg.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-mkfont.cmake)
 
 
 
