@@ -1,7 +1,7 @@
 project (util)
 
 include (${CMAKE_SOURCE_DIR}/util/grub-bios-setup.cmake)
-
+include (${CMAKE_SOURCE_DIR}/util/grub-editenv.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-file.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-install.cmake)
 
