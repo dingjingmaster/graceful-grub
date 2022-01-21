@@ -1,5 +1,9 @@
 # Prerequisites
 *.d
+*.txt.user
+.deps*
+*.gmo
+.dirstamp
 
 # Object files
 *.o
