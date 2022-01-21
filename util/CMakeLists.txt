@@ -15,6 +15,8 @@ include (${CMAKE_SOURCE_DIR}/util/grub-mknetdir.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mkpasswd-pbkdf2.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mkrelpath.cmake)
 include (${CMAKE_SOURCE_DIR}/util/grub-mkrescue.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-mkstandalone.cmake)
+include (${CMAKE_SOURCE_DIR}/util/grub-mount.cmake)
 
 
 
