@@ -2,6 +2,7 @@ project (graceful-grub)
 cmake_minimum_required (VERSION 3.5)
 
 set (CMAKE_C_STANDARD 99)
+set (CMAKE_VERBOSE_MAKEFILE ON)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
 set (CMAKE_INCLUDE_CURRENT_DIR YES)
 set (CMAKE_INCLUDE_DIRECTORIES_BEFORE ON)
@@ -135,9 +136,15 @@ endif ()
 add_definitions (
     -DHAVE_CONFIG_H
     -DGRUB_UTIL=1
-    -DGRUB_TARGET_CPU=${TARGET_CPU}
+    -DGRUB_MACHINE=I386_PC
+    -DGRUB_TARGET_CPU=\"${TARGET_CPU}\"
     -D_FILE_OFFSET_BITS=64
     )
+
+# 删除旧的库信息
+if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.lib")
+    exec_program (rm ARGS -rf "${CMAKE_CURRENT_SOURCE_DIR}/.lib/libgrubmods.a")
+endif()
 
 add_subdirectory (grub-core)
 add_subdirectory (tests)
