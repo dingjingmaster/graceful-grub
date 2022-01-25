@@ -144,6 +144,7 @@ add_definitions (
 # 删除旧的库信息
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.lib")
     exec_program (rm ARGS -rf "${CMAKE_CURRENT_SOURCE_DIR}/.lib/libgrubmods.a")
+    exec_program (rm ARGS -rf "${CMAKE_CURRENT_SOURCE_DIR}/.lib/libgrubgcry.a")
 endif()
 
 add_subdirectory (grub-core)
