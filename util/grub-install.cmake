@@ -27,7 +27,9 @@ FILE (GLOB GRUB_INSTALL_SRC
 source_group (grub-install ${GRUB_INSTALL_SRC})
 
 add_executable(grub-install ${GRUB_INSTALL_SRC})
-target_link_libraries (grub-install -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
+target_link_libraries (grub-install
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
 target_include_directories (grub-install BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-install BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-install PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-install")

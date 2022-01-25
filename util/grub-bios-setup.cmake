@@ -12,9 +12,9 @@ add_executable(grub-bios-setup ${GRUB_BIOS_SETUP_SRC})
 target_link_directories (grub-bios-setup BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 target_link_libraries (grub-bios-setup
         ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+        -lgrubmods
+
         -ldevmapper
-        -lgrubmods
-        -lgrubmods
         -lgrubgcry
         -lgrubkern
         -lgnu)

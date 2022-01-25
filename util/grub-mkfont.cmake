@@ -7,7 +7,9 @@ source_group (grub-mkfont ${GRUB_MKFONT_SRC})
 
 # FIXME://
 add_executable(grub-mkfont ${GRUB_MKFONT_SRC})
-target_link_libraries (grub-mkfont -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -lfreetype)
+target_link_libraries (grub-mkfont
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -lfreetype)
 target_include_directories (grub-mkfont BEFORE PUBLIC
     ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/
     /usr/include/freetype2

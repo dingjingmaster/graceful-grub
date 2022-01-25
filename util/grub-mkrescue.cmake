@@ -27,7 +27,9 @@ FILE (GLOB GRUB_MKRESCUE_SRC
 source_group (grub-mkrescue ${GRUB_MKRESCUE_SRC})
 
 add_executable(grub-mkrescue ${GRUB_MKRESCUE_SRC})
-target_link_libraries (grub-mkrescue -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
+target_link_libraries (grub-mkrescue
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
 target_include_directories (grub-mkrescue BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-mkrescue BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-mkrescue PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-mkrescue")

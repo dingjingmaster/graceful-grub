@@ -6,7 +6,9 @@ FILE (GLOB GRUB_MACBLESS_SRC
 source_group (grub-macbless ${GRUB_MACBLESS_SRC})
 
 add_executable(grub-macbless ${GRUB_MACBLESS_SRC})
-target_link_libraries (grub-macbless -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-macbless
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-macbless BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-macbless BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-macbless PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-macbless")

@@ -7,7 +7,9 @@ FILE (GLOB GRUB_FSTEST_SRC
 source_group (grub-fstest ${GRUB_FSTEST_SRC})
 
 add_executable(grub-fstest ${GRUB_FSTEST_SRC})
-target_link_libraries (grub-fstest -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-fstest
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-fstest BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-fstest BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-fstest PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-fstest")

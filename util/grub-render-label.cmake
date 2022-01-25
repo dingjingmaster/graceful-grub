@@ -9,7 +9,9 @@ FILE (GLOB GRUB_RENDER_LABEL_SRC
 source_group (grub-render-label ${GRUB_RENDER_LABEL_SRC})
 
 add_executable(grub-render-label ${GRUB_RENDER_LABEL_SRC})
-target_link_libraries (grub-render-label -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-render-label
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-render-label BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-render-label BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-render-label PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-render-label")

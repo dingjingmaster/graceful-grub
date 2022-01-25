@@ -12,7 +12,9 @@ FILE (GLOB GRUB_MKIMAGE_SRC
 source_group (grub-mkimage ${GRUB_MKIMAGE_SRC})
 
 add_executable(grub-mkimage ${GRUB_MKIMAGE_SRC})
-target_link_libraries (grub-mkimage -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
+target_link_libraries (grub-mkimage
+    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
+    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
 target_include_directories (grub-mkimage BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-mkimage BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-mkimage PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-mkimage")
