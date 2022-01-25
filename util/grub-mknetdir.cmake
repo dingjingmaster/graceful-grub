@@ -23,9 +23,7 @@ FILE (GLOB GRUB_MKNETDIR_SRC
 source_group (grub-mknetdir ${GRUB_MKNETDIR_SRC})
 
 add_executable(grub-mknetdir ${GRUB_MKNETDIR_SRC})
-target_link_libraries (grub-mknetdir
-    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
-    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma -lfreetype)
+target_link_libraries (grub-mknetdir -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma -lfreetype)
 target_include_directories (grub-mknetdir BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-mknetdir BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-mknetdir PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-mknetdir")

@@ -7,9 +7,7 @@ FILE (GLOB GRUB_MENULST2CFG_SRC
 source_group (grub-menulst2cfg ${GRUB_MENULST2CFG_SRC})
 
 add_executable(grub-menulst2cfg ${GRUB_MENULST2CFG_SRC})
-target_link_libraries (grub-menulst2cfg
-    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
-    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-menulst2cfg -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-menulst2cfg BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-menulst2cfg BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-menulst2cfg PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-menulst2cfg")

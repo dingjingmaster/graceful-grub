@@ -6,9 +6,7 @@ FILE (GLOB GRUB_OFPATHNAME_SRC
 source_group (grub-ofpathname ${GRUB_OFPATHNAME_SRC})
 
 add_executable(grub-ofpathname ${GRUB_OFPATHNAME_SRC})
-target_link_libraries (grub-ofpathname
-    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
-    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-ofpathname -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-ofpathname BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-ofpathname BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-ofpathname PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-ofpathname")

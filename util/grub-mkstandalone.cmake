@@ -27,9 +27,7 @@ FILE (GLOB GRUB_MKSTANDALONE_SRC
 source_group (grub-mkstandalone ${GRUB_MKSTANDALONE_SRC})
 
 add_executable(grub-mkstandalone ${GRUB_MKSTANDALONE_SRC})
-target_link_libraries (grub-mkstandalone
-    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
-    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
+target_link_libraries (grub-mkstandalone -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu -llzma)
 target_include_directories (grub-mkstandalone BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-mkstandalone BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-mkstandalone PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-mkstandalone")

@@ -10,9 +10,7 @@ FILE (GLOB GRUB_SPARC64_SETUP_SRC
 source_group (grub-sparc64-setup ${GRUB_SPARC64_SETUP_SRC})
 
 add_executable(grub-sparc64-setup ${GRUB_SPARC64_SETUP_SRC})
-target_link_libraries (grub-sparc64-setup
-    ${CMAKE_SOURCE_DIR}/.lib/libgrubmods.a
-    -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
+target_link_libraries (grub-sparc64-setup -ldevmapper -lgrubmods -lgrubgcry -lgrubkern -lgnu)
 target_include_directories (grub-sparc64-setup BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/grub-core/lib/gnulib/)
 target_link_directories (grub-sparc64-setup BEFORE PUBLIC ${CMAKE_SOURCE_DIR}/.lib)
 set_target_properties (grub-sparc64-setup PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/grub-sparc64-setup")
