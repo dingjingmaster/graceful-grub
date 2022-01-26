@@ -5,6 +5,8 @@
 *.gmo
 .dirstamp
 ChangeLog
+.idea/
+cmake-build-debug/
 
 # Object files
 *.o
