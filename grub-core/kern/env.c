@@ -29,16 +29,15 @@ static struct grub_env_context initial_context;
 struct grub_env_context *grub_current_context = &initial_context;
 
 /* Return the hash representation of the string S.  */
-static unsigned int
-grub_env_hashval (const char *s)
+static unsigned int grub_env_hashval (const char *s)
 {
-  unsigned int i = 0;
+    unsigned int i = 0;
 
-  /* XXX: This can be done much more efficiently.  */
-  while (*s)
-    i += 5 * *(s++);
+    /* XXX: This can be done much more efficiently.  */
+    while (*s)
+        i += 5 * *(s++);
 
-  return i % HASHSZ;
+    return i % HASHSZ;
 }
 
 static struct grub_env_var *
@@ -55,18 +54,18 @@ grub_env_find (const char *name)
   return 0;
 }
 
-static void
-grub_env_insert (struct grub_env_context *context,
-		 struct grub_env_var *var)
+static void grub_env_insert (struct grub_env_context *context, struct grub_env_var *var)
 {
-  int idx = grub_env_hashval (var->name);
+    int idx = grub_env_hashval (var->name);
 
-  /* Insert the variable into the hashtable.  */
-  var->prevp = &context->vars[idx];
-  var->next = context->vars[idx];
-  if (var->next)
-    var->next->prevp = &(var->next);
-  context->vars[idx] = var;
+    /* Insert the variable into the hashtable.  */
+    var->prevp = &context->vars[idx];
+    var->next = context->vars[idx];
+    if (var->next) {
+        var->next->prevp = &(var->next);
+    }
+
+    context->vars[idx] = var;
 }
 
 static void
@@ -78,55 +77,55 @@ grub_env_remove (struct grub_env_var *var)
     var->next->prevp = var->prevp;
 }
 
-grub_err_t
-grub_env_set (const char *name, const char *val)
+grub_err_t grub_env_set (const char *name, const char *val)
 {
-  struct grub_env_var *var;
+    struct grub_env_var *var;
 
-  /* If the variable does already exist, just update the variable.  */
-  var = grub_env_find (name);
-  if (var)
-    {
-      char *old = var->value;
+    /* If the variable does already exist, just update the variable.  */
+    var = grub_env_find (name);
+    if (var) {
+        char *old = var->value;
+        if (var->write_hook) {
+            var->value = var->write_hook (var, val);
+        } else {
+            var->value = grub_strdup (val);
+        }
 
-      if (var->write_hook)
-	var->value = var->write_hook (var, val);
-      else
-	var->value = grub_strdup (val);
+        if (!var->value) {
+            var->value = old;
+            return grub_errno;
+	    }
 
-      if (! var->value)
-	{
-	  var->value = old;
-	  return grub_errno;
-	}
-
-      grub_free (old);
-      return GRUB_ERR_NONE;
+        grub_free (old);
+        return GRUB_ERR_NONE;
     }
 
-  /* The variable does not exist, so create a new one.  */
-  var = grub_zalloc (sizeof (*var));
-  if (! var)
-    return grub_errno;
+    /* The variable does not exist, so create a new one.  */
+    var = grub_zalloc (sizeof (*var));
+    if (!var) {
+        return grub_errno;
+    }
 
-  var->name = grub_strdup (name);
-  if (! var->name)
-    goto fail;
+    var->name = grub_strdup (name);
+    if (!var->name) {
+        goto fail;
+    }
 
-  var->value = grub_strdup (val);
-  if (! var->value)
-    goto fail;
+    var->value = grub_strdup (val);
+    if (! var->value) {
+        goto fail;
+    }
 
-  grub_env_insert (grub_current_context, var);
+    grub_env_insert (grub_current_context, var);
 
-  return GRUB_ERR_NONE;
+    return GRUB_ERR_NONE;
 
  fail:
-  grub_free (var->name);
-  grub_free (var->value);
-  grub_free (var);
+    grub_free (var->name);
+    grub_free (var->value);
+    grub_free (var);
 
-  return grub_errno;
+    return grub_errno;
 }
 
 const char *

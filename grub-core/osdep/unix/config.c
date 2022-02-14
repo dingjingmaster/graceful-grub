@@ -61,79 +61,71 @@ grub_util_get_localedir (void)
   return LOCALEDIR;
 }
 
-void
-grub_util_load_config (struct grub_util_config *cfg)
+void grub_util_load_config (struct grub_util_config *cfg)
 {
-  pid_t pid;
-  const char *argv[4];
-  char *script, *ptr;
-  const char *cfgfile, *iptr;
-  FILE *f = NULL;
-  int fd;
-  const char *v;
+    pid_t pid;
+    const char *argv[4];
+    char *script, *ptr;
+    const char *cfgfile, *iptr;
+    FILE *f = NULL;
+    int fd;
+    const char *v;
 
-  memset (cfg, 0, sizeof (*cfg));
+    memset (cfg, 0, sizeof (*cfg));
 
-  v = getenv ("GRUB_ENABLE_CRYPTODISK");
-  if (v && v[0] == 'y' && v[1] == '\0')
-    cfg->is_cryptodisk_enabled = 1;
+    v = getenv ("GRUB_ENABLE_CRYPTODISK");
+    if (v && v[0] == 'y' && v[1] == '\0')
+        cfg->is_cryptodisk_enabled = 1;
 
-  v = getenv ("GRUB_DISTRIBUTOR");
-  if (v)
-    cfg->grub_distributor = xstrdup (v);
+    v = getenv ("GRUB_DISTRIBUTOR");
+    if (v)
+        cfg->grub_distributor = xstrdup (v);
 
-  cfgfile = grub_util_get_config_filename ();
-  if (!grub_util_is_regular (cfgfile))
-    return;
+    cfgfile = grub_util_get_config_filename ();
+    if (!grub_util_is_regular (cfgfile))
+        return;
 
-  argv[0] = "sh";
-  argv[1] = "-c";
+    argv[0] = "sh";
+    argv[1] = "-c";
 
-  script = xcalloc (4, strlen (cfgfile) + 300);
+    script = xcalloc (4, strlen (cfgfile) + 300);
 
-  ptr = script;
-  memcpy (ptr, ". '", 3);
-  ptr += 3;
-  for (iptr = cfgfile; *iptr; iptr++)
-    {
-      if (*iptr == '\\')
-	{
-	  memcpy (ptr, "'\\''", 4);
-	  ptr += 4;
-	  continue;
-	}
-      *ptr++ = *iptr;
+    ptr = script;
+    memcpy (ptr, ". '", 3);
+    ptr += 3;
+    for (iptr = cfgfile; *iptr; iptr++) {
+        if (*iptr == '\\') {
+            memcpy (ptr, "'\\''", 4);
+            ptr += 4;
+            continue;
+        }
+        *ptr++ = *iptr;
     }
 
-  strcpy (ptr, "'; printf \"GRUB_ENABLE_CRYPTODISK=%s\\nGRUB_DISTRIBUTOR=%s\\n\" "
-	  "\"$GRUB_ENABLE_CRYPTODISK\" \"$GRUB_DISTRIBUTOR\"");
+    strcpy (ptr, "'; printf \"GRUB_ENABLE_CRYPTODISK=%s\\nGRUB_DISTRIBUTOR=%s\\n\"\"$GRUB_ENABLE_CRYPTODISK\" \"$GRUB_DISTRIBUTOR\"");
 
-  argv[2] = script;
-  argv[3] = '\0';
+    argv[2] = script;
+    argv[3] = '\0';
 
-  pid = grub_util_exec_pipe (argv, &fd);
-  if (pid)
+    pid = grub_util_exec_pipe (argv, &fd);
+    if (pid)
     f = fdopen (fd, "r");
-  if (f)
-    {
-      grub_util_parse_config (f, cfg, 1);
-      fclose (f);
+    if (f) {
+        grub_util_parse_config (f, cfg, 1);
+        fclose (f);
     }
-  if (pid)
-    {
-      close (fd);
-      waitpid (pid, NULL, 0);
+    if (pid) {
+        close (fd);
+        waitpid (pid, NULL, 0);
     }
-  if (f)
-    return;
+    if (f)
+        return;
 
-  f = grub_util_fopen (cfgfile, "r");
-  if (f)
-    {
-      grub_util_parse_config (f, cfg, 0);
-      fclose (f);
+    f = grub_util_fopen (cfgfile, "r");
+    if (f) {
+        grub_util_parse_config (f, cfg, 0);
+        fclose (f);
+    } else {
+        grub_util_warn (_("cannot open configuration file `%s': %s"), cfgfile, strerror (errno));
     }
-  else
-    grub_util_warn (_("cannot open configuration file `%s': %s"),
-		    cfgfile, strerror (errno));
 }

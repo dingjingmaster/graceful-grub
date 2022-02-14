@@ -70,8 +70,7 @@ struct grub_named_list
 };
 typedef struct grub_named_list *grub_named_list_t;
 
-void * EXPORT_FUNC(grub_named_list_find) (grub_named_list_t head,
-					  const char *name);
+void * EXPORT_FUNC(grub_named_list_find) (grub_named_list_t head, const char *name);
 
 #define GRUB_AS_NAMED_LIST(ptr) \
   ((GRUB_FIELD_MATCH (ptr, grub_named_list_t, next) \
